@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #container{
+        width: 75%;
+        margin: auto;
+      }
+      #note{
+        width: 75%;
+        height: 50px;
+        border-radius: 50px;
+        margin: auto;
+        margin-top: 20px;
+        background-color:rgba(148, 230, 230, 0.875);
+      }
+      img{
+        display: inline-block;
+        margin: auto;
+      }
+      h1{
+        
+       text-align: center;
+       display: inline-block;
+       position: absolute;
+       top:70px;
+       font-size: 72px;
+       font-style:italic;
+      }
+    .img2{  
+        position: absolute;
+        right: 250px;
+       top:70px;
+       /* margin-left: 470px; */
+
+    }
+    .box{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 10px;
+    }
+    .box>div{
+        height: 50px;
+        border-radius: 50px;
+        padding-bottom: 20px;
+    }
+    .blue{
+        background-color:rgba(148, 230, 230, 0.875);
+
+    }
+    .pink{
+        background-color:pink;
+    }
+    .yellow{
+        background-color:rgb(247, 247, 158);
+    }
+    .blue,.pink,.yellow>h2{
+        text-align: center;
+        padding-bottom: 200px;
+    }
+    .note{
+        padding-top:10px;
+        padding-left: 20px;
+    }
+    @media all and (min-width:1237px) and (max-width:1500px){
+        .img2{
+        position: absolute;
+        right: 210px;
+       top:70px
+
+    }
+
+           } 
+    </style>
+</head>
+<body>
+    <div id="container">
+            <img src="./pic1.png" alt="">
+            <h1>weekly schedule</h1>
+            <img class="img2" src="./pic2.png" alt="">
+            <div class="box">
+               <div></div>
+               <div class="pink"><h2 style="font-style: italic;">Monday</h2></div>
+               <div class="yellow"><h2 style="font-style: italic;">Tuesday</h2></div>
+               <div class="pink"><h2 style="font-style: italic;">Wednesday</h2></div>
+               <div class="yellow"><h2 style="font-style: italic;">Thursday</h2></div>
+               <div class="pink"><h2 style="font-style: italic;">friday</h2></div>
+               <div class="blue"><h2>08:00</h2></div>
+               <div class="pink"><h2>English</h2></div>
+               <div class="yellow"><h2>Math</h2></div>
+               <div class="pink"><h2>Science</h2></div>
+               <div class="yellow"><h2>Hindi</h2></div>
+               <div class="pink"><h2>English</h2></div>
+               <div class="blue"><h2>09:00</h2></div>
+               <div class="pink"><h2>Math</h2></div>
+               <div class="yellow"><h2>Hindi</h2></div>
+               <div class="pink"><h2>History</h2></div>
+               <div class="yellow"><h2>Science</h2></div>
+               <div class="pink"><h2>Geography</h2></div>
+               <div class="blue"><h2>10:00</h2></div>
+               <div class="pink"><h2>Science</h2></div>
+               <div class="yellow"><h2>English</h2></div>
+               <div class="pink"><h2>Math</h2></div>
+               <div class="yellow"><h2>Sanskrit</h2></div>
+               <div class="pink"><h2>Hindi</h2></div>
+               <div class="blue"><h2>11:00</h2></div>
+               <div class="pink"><h2>Hindi</h2></div>
+               <div class="yellow"><h2>History</h2></div>
+               <div class="pink"><h2>Geography</h2></div>
+               <div class="yellow"><h2>English</h2></div>
+               <div class="pink"><h2>Math</h2></div>
+               <div class="blue"><h2>12:00</h2></div>
+               <div class="pink"><h2 style="font-style: italic;">Lunch Break</h2></div>
+               <div class="yellow"><h2 style="font-style: italic;">Lunch Break</h2></div>
+               <div class="pink"><h2 style="font-style: italic;">Lunch Break</h2></div>
+               <div class="yellow"><h2 style="font-style: italic;">Lunch Break</h2></div>
+               <div class="pink"><h2 style="font-style: italic;">Lunch Break</h2></div>
+               <div class="blue"><h2>13:00</h2></div>
+               <div class="pink"><h2>Sanskrit</h2></div>
+               <div class="yellow"><h2>Geography</h2></div>
+               <div class="pink"><h2>English</h2></div>
+               <div class="yellow"><h2>History</h2></div>
+               <div class="pink"><h2>Science</h2></div>
+               <div class="blue"><h2>14:00</h2></div>
+               <div class="pink"><h2>History</h2></div>
+               <div class="yellow"><h2>Sanskrit</h2></div>
+               <div class="pink"><h2>Hindi</h2></div>
+               <div class="yellow"><h2>G.K</h2></div>
+               <div class="pink"><h2>History</h2></div>
+               <div class="blue"><h2>15:00</h2></div>
+               <div class="pink"><h2>Geography</h2></div>
+               <div class="yellow"><h2>Science</h2></div>
+               <div class="pink"><h2>Sanskrit</h2></div>
+               <div class="yellow"><h2>Math</h2></div>
+               <div class="pink"><h2>Sanskrit</h2></div>
+               <div class="blue"><h2>16:00</h2></div>
+               <div class="pink"><h2>G.K</h2></div>
+               <div class="yellow"><h2>P.T</h2></div>
+               <div class="pink"><h2>Game</h2></div>
+               <div class="yellow"><h2>Geography</h2></div>
+               <div class="pink"><h2>Game</h2></div>
+            </div>
+    </div>
+    <div id="note"><h2 class="note">Note:  Carry your books according to the recpective subjects.</h2></div>
+</body>
+</html>

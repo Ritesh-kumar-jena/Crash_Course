@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #container{
+        width: 75%;
+        height: 140dvh;
+        margin: auto;
+       }
+       #container>h1{
+        text-align: center;
+        font-weight: bold;
+       }
+       #logo{
+        display: flex;
+        justify-content: space-around;
+       }
+       #logo>div>img{
+        width: 300px;
+        height: 300px;
+       }
+       #investor{
+        display: flex;
+        justify-content: space-around;
+       }
+       #investor>div{
+         width: 22%;
+        height: 100%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+       }
+       .pic{
+        display: block;
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+       }
+       #investor>div>h2,p{
+        text-align: center;
+       }
+      .logo{
+        height: 48px;
+        width: 140px;
+        margin: auto;
+        display: block;
+      }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Board Members</h1>
+        <div id="logo">
+           <div>
+            <img  src="https://www.masaischool.com/images/our-investors/india-q-borderless.svg">
+        </div>
+           <div>
+            <img style="width: 300px;height: 300px;" src="data:image/png;base64,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">
+        </div>
+           <div>
+            <img src="https://www.masaischool.com/images/our-investors/omidyar-borderless.svg">
+        </div>
+        </div>
+        <h1>Strategic Investors</h1>
+        <div id="investor">
+            <div>
+                <img class="pic" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="">
+                <h2>Vijay Shekhar Sharma</h2>
+                <p>Founder & CEO</p>
+                <img class="logo" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="">
+            </div>
+            <div>
+                <img class="pic" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png" alt="">
+                <h2>Kunal Shah</h2>
+                <p>Founder</p>
+                <img class="logo" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png" alt="">
+            </div>
+            <div>
+                <img class="pic" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg" alt="">
+                <h2>Amrish Rau</h2>
+                <p>CEO</p>
+                <img class="logo" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png" alt="">
+            </div>
+            <div>
+                <img class="pic" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg" alt="">
+                <h2>Sampad Swain</h2>
+                <p>Co-Founder & CEO</p>
+                <img class="logo" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

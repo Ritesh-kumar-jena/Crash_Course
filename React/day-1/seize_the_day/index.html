@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+     
+     let root=document.getElementById("root")
+
+    //   create a p tag useing react
+     const element=React.createElement("p",{
+
+    //    in dom we use textcontent or innerHTML to write inside a tag here we use children
+        children:"Seize the day"
+     })
+
+//  we create a root to show our data meanse we creat a container to put our html elements
+const reactRoot=ReactDOM.createRoot(root)
+
+// in dom we use apend or apendchild to apend the element in resepective contair=ner or html element
+// but here we use render to show our html element to UI
+reactRoot.render(element)
+
+// difference between dom and react is dom creat all the elemnt to show in UI agin and agin but react 1st create elements
+// if we change in any elements then react only corect that element
+  </script>
+</html>

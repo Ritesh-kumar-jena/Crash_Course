@@ -1,0 +1,219 @@
+/* Fill CSS here */
+h1{
+    text-align: center;
+}
+/*home page */
+
+#home{
+    width: 100%;
+    height: 100dvh;
+    background-color: aquamarine;
+}
+#home>button{
+        width: 100px; 
+        height: 40px;
+      margin-top: 15%;   
+      font-weight: bold;   
+}
+#reg{
+    margin-left: 45%;
+    color: red;
+    background-color: yellow;
+}
+#Log{
+ margin-left: 40px;
+ color:black;
+ background-color: red;
+}
+#home>button:hover{
+    background-color: aqua;
+    color: black;
+}
+
+/* signup css */
+
+#record{
+    display: none;
+   justify-content: space-around;
+}
+
+#singup{
+    width: 100%;
+    height: 100dvh;
+    margin: auto;
+    background-color: antiquewhite;
+    padding-top: 100px;
+    display: none;
+}
+#singup>div{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 36%;
+   background-color: aqua;
+}
+
+#singup>div>input{
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 18%;
+    border-radius: 50px;
+    padding-left: 80px;
+}
+#singup>div>select{
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 18%;
+    border-radius: 50px;
+    padding-left: 80px;
+}
+#singup>div>button{
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 30%;
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+    border: none;
+}
+#singup>div>button:hover{
+    color:black;
+    background-color: red;
+    font-weight: bold;
+}
+
+/* login css */
+
+#login{
+    width: 100%;
+    height: 100dvh;
+    margin: auto;
+    background-color: antiquewhite;
+    padding-top: 100px;
+    display: none;
+}
+#login>div{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 36%;
+   background-color: aqua;
+   padding-top: 10px;
+}
+
+#login>div>input{
+width: 200px;
+height: 30px;
+margin-bottom: 10px;
+margin-top: 10px;
+margin-left: 18%;
+border-radius: 50px;
+padding-left: 80px;
+}
+
+#login>div>button{
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 30%;
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+    border: none;
+}
+#login>div>button:hover{
+    color:black;
+    background-color: red;
+    font-weight: bold;
+}
+
+/* Form */
+
+#record>form{
+  margin-left: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+}
+#record>form>input{
+    width: 400px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+#record>form>select{
+    width: 400px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+#record>form>label{
+    font-size: large;
+    font-weight: bold;
+}
+#record>form>input[type="submit"]{
+    border-radius: 10px;
+    background-color: #0368AB;
+    border: none;
+    color: white;
+}
+/* table*/
+  
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  table td,
+  table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #8caacf;
+  }
+  
+  table tr:hover {
+    background-color: #ddd;
+  }
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0468aa;
+    color: white;
+    text-align: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+   
+  .delete{
+    background-color: red;
+  }
+  .delete:hover{
+    font-weight: bold;
+  }
+  #selectDepartment{
+    height: 50px;
+     border: none;
+     font-weight: bold;
+     background-color: aqua;
+  }
+  h3{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }

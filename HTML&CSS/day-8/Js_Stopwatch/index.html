@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 300px;
+            height: 100px;
+           margin-top: 40px;
+           margin-left: 40%;
+            padding-top: 40px;
+            padding-left: 50px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        
+        h1,h2,h4{
+           display: inline;
+            font-weight: bold;
+         }
+        #displayhr{
+            display: none;
+        } 
+        #displaymin{
+            display: none;
+        }
+        #reset{
+            margin-left: 10px;
+            background-color: red;
+        }
+        #start{
+            margin-left: 25%;
+            background-color: aqua;
+        }
+        button:hover{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div id="displayhr"> 
+      <h1 id="hour">00</h1>
+      <h4>h</h4>
+      <h2>:</h2> 
+    </div> 
+    <div id="displaymin">
+      <h1 id="min">00</h1>
+      <h4>m</h4>
+      <h2>:</h2>
+     </div> 
+      <h1 id="sec">00</h1>
+      <h4>s</h4>
+      <h2>:</h2>
+      <h1 id="milisec">00</h1>
+      <div style="height: 20px;"></div>
+      <button id="start">start</button>
+      <button id="reset">reset</button>
+    </div>
+</body>
+</html>
+<script>
+    let displayhr=document.getElementById("displayhr")
+    let displaymin=document.getElementById("displaymin")
+     let hr=document.getElementById("hour")
+    let min=document.getElementById("min")
+    let sec=document.getElementById("sec")
+    let milisec=document.getElementById("milisec")
+    let start=document.getElementById("start")
+    let reset=document.getElementById("reset")
+    let flag=true;
+    let Time;
+    let obj={
+        milisecond:0,
+        second:0,
+        minute:0,
+         hour:0
+    }
+    
+
+    function Stopwatch(){
+        Time=setInterval(()=>{
+          obj.milisecond++ 
+          milisec.innerText=obj.milisecond<10?"0"+obj.milisecond:obj.milisecond % 100
+          if(obj.milisecond===100){
+            obj.milisecond=0
+            obj.second++
+            sec.innerText=obj.second<10?"0"+obj.second:obj.second %60
+          }
+            if(obj.second===60){
+                obj.second=0
+                obj.minute++
+                min.innerText=obj.minute<10?"0"+obj.minute:obj.minute %60
+          }
+          if(obj.minute===60){
+                obj.minute=0
+                obj.hour++
+                hr.innerText=obj.hour<10?"0"+obj.hour:obj.hour
+          }
+          
+          if(obj.hour>0 || obj.minute>0){
+            displaymin.style.display="inline"
+          }
+     
+          if(obj.hour>0){
+            displaymin.style.display="inline"
+            displayhr.style.display="inline"
+        }
+
+        },10)
+    }
+
+    function fun(){
+        if(flag===true){
+            Stopwatch()
+            start.innerText="stop"
+            start.style.backgroundColor="red"
+            flag=false
+        }
+       else if(flag===false){
+            clearInterval(Time)
+            start.innerText="start"
+            start.style.backgroundColor="aqua"
+            flag=true
+        }
+    }
+    start.addEventListener("click",()=>{
+        fun()
+    })
+    reset.addEventListener("click",()=>{
+        clearInterval(Time)
+        flag=true
+        start.innerText="start"
+        start.style.backgroundColor="aqua"
+        obj.milisecond=0
+        obj.second=0
+        obj.minute=0
+        milisec.innerText="00"
+        sec.innerText="00"
+        min.innerText="00"
+        hr.innerText="00"
+        displaymin.style.display="none"
+        displayhr.style.display="none"
+
+
+    })
+</script>

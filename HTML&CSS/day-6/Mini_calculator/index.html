@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+      width: 500px;
+      margin: auto;
+      margin-top: 40px;
+    }
+
+     h1{
+        text-align: center;
+        color: red;
+        background-color: yellow;
+     }
+
+    #click {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    #firstnum {
+      margin-right: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Mini-Calculator</h1>
+        <input id="firstnum" type="number" placeholder="Enter 1st Number" />
+        <input id="secondnum" type="number" placeholder="Enter 2nd Number" />
+        <div id="click">
+          <button onclick="add()" id="add">ADD</button>
+          <button onclick="subtract()" id="subtract">Subtract</button>
+          <button onclick="multiply()" id="multiply">Multiply</button>
+          <button onclick="divide()" id="divide">Divide</button>
+        </div>
+      </div>
+</body>
+</html>
+<script>
+     let first = document.getElementById("firstnum")
+  let second = document.getElementById("secondnum")
+
+  function add() {
+    alert(`Ans is -: ${Number(first.value) + Number(second.value)}`)
+    first.value = ""
+    second.value = ""
+  }
+  function subtract() {
+    alert(`Ans is -: ${Number(first.value) - Number(second.value)}`)
+    first.value = ""
+    second.value = ""
+  }
+  function multiply() {
+    alert(`Ans is -: ${Number(first.value) * Number(second.value)}`)
+    first.value = ""
+    second.value = ""
+  }
+  function divide() {
+    alert(`Ans is -: ${Number(first.value) / Number(second.value)}`)
+    first.value = ""
+    second.value = ""
+  }
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+         width: 75%;
+         margin: auto;
+         display: flex;
+         justify-content: space-around;
+        }
+        h1{
+         text-align: center;
+         font-weight: bold;
+        }
+        
+        #container>div{
+          width: 22%;
+         height: 100%;
+         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+         text-align: center;
+         border-top-right-radius: 10px;
+         border-top-left-radius: 10px;
+         border-bottom-right-radius: 10px;
+         border-bottom-left-radius: 10px;
+        }
+        .pic{
+         display: block;
+         width: 100%;
+         border-top-right-radius: 10px;
+         border-top-left-radius: 10px;
+        }
+        #container>div>h2,p{
+            margin: 10px 0px;
+        }
+        h2{
+            color: #0A0103;
+        }
+        p{
+            color:#544D4F;
+        }
+       .logo{
+         height: 48px;
+         width: 140px;
+         margin: auto;
+         display: block;
+       }
+     </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let img=["https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg","https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png","https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg","https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg"]
+    let name=["Vijay Shekhar Sharma","Kunal Shah","Amrish Rau","Sampad Swain"]
+    let position=["Founder & CEO","Founder","CEO","Co-Founder & CEO"]
+    let logo=["https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg","https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png","https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png","https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"]
+    let body=document.querySelector("body")
+    let container=document.createElement("div")
+    container.id="container"
+    let heading=document.createElement("h1")
+    heading.innerText="Strategic Investors"
+    for(var i=0;i<img.length;i++){
+        let div=document.createElement("div")
+        let image=document.createElement("img")
+        image.src=img[i]
+        image.className="pic"
+        let Name=document.createElement("h2")
+        Name.innerText=name[i]
+        let Position=document.createElement("p")
+        Position.innerText=position[i]
+        let Logo=document.createElement("img")
+        Logo.src=logo[i]
+        Logo.className="logo"
+        div.append(image,Name,Position,Logo)
+        container.append(div)
+    }
+    body.append(heading,container)
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 75%;
+            margin: auto;
+            
+        }
+        #height{
+            display:block;
+           
+        }
+        h3{
+            font-weight: bolder;
+        }
+        button{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+   <div>
+    <h1>Check your BMI</h1>
+    <h2>Enter your weight and height below to check your BMI results</h2>
+    <h2>Put your weight in here (KG)</h2>
+    <input id="weight" type="number">
+    <h2>And your height in here (CM)</h2>
+    <input id="height" type="number">
+    <button onclick="cheack()">Calculate BMI</button>
+    <h3></h3>
+   </div> 
+</body>
+</html>
+<script>
+    let height=document.getElementById("height")
+    let weight=document.getElementById("weight")
+    let display=document.querySelector("h3")
+    function cheack(){
+    let BMI=(Number(weight.value)) / ((Number(height.value) * Number(height.value))/100**2)
+    let bag=""+BMI
+   let bmi=""
+   for(var i=0;i<bag.length;i++){
+    bmi+=bag[i]
+    if(bag[i]==="."){
+        bmi+=bag[i+1]
+        break;
+    }
+   }
+   if(bmi <= 18.4){
+   display.innerText=`Your BMI is ${bmi} which means You are UnderWeight `
+   }
+ else  if(bmi >= 18.5 && bmi <= 24.9){
+    display.innerText=`Your BMI is ${bmi} which means You are Normal Weight` 
+}
+else if(bmi >= 25 && bmi <= 29.9){
+    display.innerText=`Your BMI is ${bmi} which means You are Overweight`
+}
+else if(bmi >= 30){
+    display.innerText=`Your BMI is ${bmi} which means You are Obese`
+}
+
+    }
+    
+</script>
