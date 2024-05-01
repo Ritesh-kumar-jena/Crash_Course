@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const root =document.getElementById("root")
+      //save a  text in variable
+      const text="Seize the day"
+      // creat a variable and asign a p tag inside  variable 
+    //    inside p tag we put a varible which have a text content in it by the help of jsx
+      const element=(
+                     <p>{text}</p>
+                    )
+                    // create a root where we put our element to show in UI
+      const reactRender=ReactDOM.createRoot(root)
+      
+    //   render the element
+      reactRender.render(element)
+    </script>
+  </body>
+</html>
