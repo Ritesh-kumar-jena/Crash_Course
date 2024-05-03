@@ -11,13 +11,16 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       const root =document.getElementById("root")
+      
       //save a  text in variable
       const text="Seize the day"
-      // creat a variable and asign a p tag inside  variable 
-    //    inside p tag we put a varible which have a text content in it by the help of jsx
-      const element=(
-                     <p>{text}</p>
-                    )
+
+    // create a variable and give it to a boolean value
+    let flag=true
+    
+    // creat a variable and assign a p tag inside  variable by the help of JSX
+    // use conditional rendering (if the statement true then show text value inside the p tag else show error inside p tag)
+      const element=flag?<p>{text}</p>:<p>error</p>
                     // create a root where we put our element to show in UI
       const reactRender=ReactDOM.createRoot(root)
       
