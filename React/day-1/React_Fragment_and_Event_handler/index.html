@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const root=document.getElementById("root")
+    //   create html elements inside a react fragment by the help of JSX and assign a variable to them 
+      const element=(
+        <>
+        <p>React is a javascript library</p>
+        <div className="main" style={{backgroundColor:"lightblue",padding:"10px",width:"300px",borderRadius:"5px"}}>
+            <p>Click the below button to alert 'Hello'</p>
+            <button onClick={()=>alert("Hello")}>Alert Hello</button>
+        </div>
+        </>
+      )
+      //create a root element where we want to render our elements
+      const rootRender=ReactDOM.createRoot(root)
+    //   render html elements inside root element 
+      rootRender.render(element)
+    </script>
+  </body>
+</html>
