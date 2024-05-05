@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 75%;
+            margin: auto;
+        }
+        #pic{
+            width: 100%;
+            margin: auto;
+        }
+        img{
+            width: 500px;
+            height: 400px;
+            margin-left: 300px;
+        }
+        button{
+            margin-top: 10px;
+             
+        }
+        button:hover{
+            font-weight: bold;
+        }
+        #toggel{
+        margin-left: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="pic">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.MCLzVoExgXPyNi_V5gb1AwHaE7&pid=Api&P=0&h=180" alt="1">
+        <img src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Best-Nature-Full-HD-Images-For-Desktop.jpg" alt="2">
+        <img src="https://wallpapercave.com/wp/wp2599594.jpg" alt="3">
+        <img src="http://thewowstyle.com/wp-content/uploads/2015/01/nature-images-6.jpg" alt="4">
+        <img src="http://getwallpapers.com/wallpaper/full/a/1/b/73445.jpg" alt="5">
+        <img src="http://www.pixelstalk.net/wp-content/uploads/2016/08/Cool-Nature-Background-Images-4523x2590.jpg" alt="6">
+        <img src="http://4.bp.blogspot.com/-PU-xRtlftYo/T2i3dAeU6gI/AAAAAAAABLU/_9D4PRhloh8/s1600/Peaceful+River+Wallpapers+1.jpg" alt="7">
+        <img src="http://thewowstyle.com/wp-content/uploads/2015/01/nature-wallpaper-latest-190.jpg" alt="8">
+        <img src="http://images.unsplash.com/photo-1590523278191-995cbcda646b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9" alt="9">
+        <img src="https://www2.shutterstock.com/blog/wp-content/uploads/sites/5/2016/03/fall-trees-road-1.jpg" alt="10">
+        <img src="http://thewowstyle.com/wp-content/uploads/2015/01/Waterfall-Duden-at-Antalya-Turkey.jpg" alt="11">
+        <img src="https://jooinn.com/images/beauty-of-nature-24.jpg" alt="12">
+        <img src="http://4.bp.blogspot.com/-s7KrC4Vio_s/UAkCZ4KDUII/AAAAAAAACtw/bXYxmLo3jq8/s1600/mountan-reflection-on-lake-nature-background.jpg" alt="13">
+        <img src="https://3.bp.blogspot.com/-pALHrs4KKw4/T2i34rmzGgI/AAAAAAAABLc/xHlFbzK4W1A/s1600/Peaceful+River+Wallpapers+2.jpg" alt="14">
+        <img src="https://3.bp.blogspot.com/-AhBahdEd3Yg/VodhRsBc3RI/AAAAAAAAGtM/roFwvTANhmA/s1600/Red%2Bflowers%2Bgreen%2Blandscape%2Bdesktop%2Bwallpaper.jpg" alt="15">
+        <img src="http://thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg" alt="16">
+        <img src="https://jooinn.com/images/lonely-tree-reflection-3.jpg" alt="17">
+        <img src="https://static.wixstatic.com/media/8a8033_a738085f564f4d43aa34edebaebae5b5~mv2_d_1600_1600_s_2.jpg/v1/fit/w_1000%2Ch_1000%2Cal_c%2Cq_80/file.jpg" alt="18">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.FEqv7YYMNjXtrVYqo7HHzAHaE7&pid=Api&P=0&h=180" alt="19">
+        <img src="https://images3.alphacoders.com/823/thumb-1920-82317.jpg" alt="20">
+    </div>
+        <button id="toggel" onclick="start()">Start</button>
+        <button onclick="next()">Next</button>
+        <button onclick="previous()">Previous</button>
+    </div>
+</body>
+</html>
+<script>
+    let pic=document.querySelectorAll("#pic>img")
+    let toggel=document.getElementById("toggel")
+    let slide=true
+    let slideIndex=0;
+   let interval;
+
+   function showimg(index){
+    pic.forEach((ele,i)=>{
+        if(i===index){
+            ele.style.display="block"
+        }
+        else{
+            ele.style.display="none"
+        }
+    })
+   }
+   function startSlide(){
+    interval=setInterval(()=>{
+        slideIndex=(slideIndex+1)%pic.length
+        showimg(slideIndex)
+    },2000)
+   }
+
+   function stopSlide(){
+    clearInterval(interval)
+   }
+
+function Toggel(){
+    if(slide){
+        startSlide()
+        slide=false
+      toggel.innerHTML="Stop"
+    }
+    else{
+        stopSlide()
+        slide=true
+        toggel.innerHTML="Start"
+    }
+}
+function start(){
+    Toggel()
+}
+function next(){
+    stopSlide()
+    slideIndex=(slideIndex+1)%pic.length
+    showimg(slideIndex)
+    slide=true
+    toggel.innerHTML="Start"
+}
+function previous(){
+    stopSlide()
+    slide=true
+    toggel.innerHTML="Start"
+    if(slideIndex===0){
+        slideIndex=pic.length-1
+    }
+    else{
+    stopSlide()
+    slideIndex=(slideIndex-1)%pic.length
+    }
+    showimg(slideIndex)
+
+}
+showimg(slideIndex)
+</script>
