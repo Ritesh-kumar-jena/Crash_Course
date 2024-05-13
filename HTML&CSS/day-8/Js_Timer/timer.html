@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #cont{
+        width: 75%;
+        margin: auto;
+        padding-top: 20px;
+      }
+      #cont>div{
+        margin-bottom: 15px;
+      }
+      h1,h2{
+        display: inline;
+        font-weight: bold;
+      }
+      input{
+        width: 50px;
+        height: 20px;
+        border-radius: 5px;
+      }
+      #enter{
+        background-color:rgb(128, 239, 128);
+        color:black;
+       border-radius : 2px;
+      }
+     #button>button{
+      background-color: aqua;
+     }
+
+      button:hover{
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+    <div id="cont">
+    <div style="margin-left: 40%;">
+        <input id="Hrs" type="number" placeholder="Hrs">
+        <input id="Min" type="number" placeholder="Min">
+        <input id="Sec" type="number" placeholder="Sec">
+        <button  id="enter" onclick="enter()">Click-Enter</button>
+    </div>
+    <div style="margin-left: 45%;">
+       <h1 id="hours">00</h1>
+       <h2>:</h2>
+       <h1 id="minutes">00</h1>
+       <h2>:</h2>
+       <h1 id="seconds">00</h1>
+    </div>
+    <div id="button" style="margin-left: 43%;">
+       <button id="Start" onclick="start()">Start</button>
+       <button id="Pause" onclick="pause()">Pause</button>
+       <button id="Reset" onclick="reset()">Reset</button>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    let hours=document.getElementById("hours")
+    let minutes=document.getElementById("minutes")
+    let seconds=document.getElementById("seconds")
+    let Sec=document.getElementById("Sec")
+    let Min=document.getElementById("Min")
+    let Hrs=document.getElementById("Hrs")
+    let toggleFlag=false
+    let startTime=false
+    let time;
+    
+    let obj={
+      sec:0,
+      min:0,
+      hr:0
+
+    }
+    
+    function timerule(){
+       if(Sec.value===""){
+        alert("plz enter valid sec input")
+       }
+       else if(+Sec.value>59){
+        alert("sec value should not be greater than(>) 59")
+       }
+       else if(+Min.value>59){
+        alert("Min value should not be greater than(>) 59")
+       }
+       else if(+Hrs.value>23){
+        alert("Hrs value should not be greater than(>) 23")
+       }
+        else if(Min.value==="" &&Sec.value==="0"){
+          alert("invalid input (sec input should be greater than zero (0>))")
+        }
+        else if(Hrs.value==="" &&Min.value==="0" &&Sec.value==="0"){
+          alert("plz enter valid input")
+        }
+        else if(Hrs.value!=="" &&Min.value==="" &&Sec.value!==""){
+          alert("plz enter valid input")
+        }
+        else if(Hrs.value==="0"&& Min.value==="0" &&Sec.value==="0"){
+          alert("plz enter valid input")
+        }
+        else if(+Hrs.value<0 || +Min.value<0 || +Sec.value<0){
+          alert("invalid input ( input should be greater than zero (0>))")
+        }
+        else if(Hrs.value!==""){
+          obj.hr=+Hrs.value
+          obj.hr<10?hours.innerText="0"+obj.hr:hours.innerText=obj.hr
+          obj.min=+Min.value
+          obj.min<10?minutes.innerText="0"+obj.min:minutes.innerText=obj.min
+          obj.sec=+Sec.value
+          obj.sec<10?seconds.innerText="0"+obj.sec:seconds.innerText=obj.sec
+          toggleFlag=true
+        }
+        else if(Min.value!==""){
+          obj.min=+Min.value
+          obj.min<10?minutes.innerText="0"+obj.min:minutes.innerText=obj.min
+          obj.sec=+Sec.value
+          obj.sec<10?seconds.innerText="0"+obj.sec:seconds.innerText=obj.sec
+          toggleFlag=true
+        }
+        else{
+          obj.sec=+Sec.value
+          obj.sec<10?seconds.innerText="0"+obj.sec:seconds.innerText=obj.sec
+          toggleFlag=true
+          
+          
+        }
+
+       
+    }
+    
+ function timer(){
+  time=setInterval(()=>{
+    if( obj.min!==0 &&obj.min!==undefined&&obj.sec<60||obj.hr===undefined&& obj.min===0&&obj.sec!==0|| obj.min===undefined&&obj.sec!==0||obj.hr!==undefined&& obj.min===0&&obj.sec!==0){
+            obj.sec--
+            obj.sec<10?seconds.innerText="0"+obj.sec:seconds.innerText=obj.sec
+          }
+        if(obj.min!==undefined&&obj.sec<0){
+            obj.sec=60
+            obj.sec--
+            obj.sec<10?seconds.innerText="0"+obj.sec:seconds.innerText=obj.sec
+           
+        }
+        if(obj.hr===undefined && obj.min!==undefined&&obj.sec===59||obj.hr===undefined&&obj.min!==0&&obj.sec===59){ 
+           
+            obj.min--
+           obj.min<10?minutes.innerText="0"+obj.min:minutes.innerText=obj.min
+        }
+          if(obj.hr>0&&obj.min===0&&obj.sec===0){
+            obj.sec--
+            if(obj.sec===59){
+            obj.sec<10?seconds.innerText="0"+obj.sec:seconds.innerText=obj.sec
+            obj.min--
+           obj.min<10?minutes.innerText="0"+obj.min:minutes.innerText=obj.min
+            }
+          } 
+          if(obj.hr!==undefined&&obj.min<60&&obj.sec===59){
+        obj.min--
+            obj.min<10?minutes.innerText="0"+obj.min:minutes.innerText=obj.min
+       }
+       if(obj.hr!==undefined&&obj.min<0){
+        obj.min=60
+        obj.min--
+            obj.min<10?minutes.innerText="0"+obj.min:minutes.innerText=obj.min
+       }
+       if(obj.hr!==undefined&&obj.hr!==0&&obj.min===59&&obj.sec===59){
+        obj.hr--
+        obj.hr<10?hours.innerText="0"+obj.hr:hours.innerText=obj.hr
+       }
+       console.log(obj.sec)
+  },1000)
+ }
+
+
+    function enter(){
+      if(toggleFlag===false){
+        timerule()
+      }else{
+        alert("plz click Reset button")
+      }
+      Hrs.value=""
+      Min.value=""
+      Sec.value=""
+    }
+
+    function start(){
+      if(toggleFlag){
+        if(startTime===false){
+        timer()
+        startTime=true
+      }
+      }
+     
+      
+    }
+    function pause(){
+     if(startTime){
+      clearInterval(time)
+      startTime=false
+     }
+    }
+
+    function reset(){
+      if(toggleFlag){
+        obj.hr=0
+          hours.innerText="00"
+          obj.min=0
+          minutes.innerText="00"
+          obj.sec=0
+          seconds.innerText="00"
+          toggleFlag=false
+          clearInterval(time)
+          startTime=false
+      }
+    }
+</script>
