@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+            background-color: antiquewhite;
+        }
+        #Short{
+            margin-top: 20px;
+            margin-bottom: 40px;
+            margin-left: 45%;
+        }
+         #container{
+        width: 75%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+      }
+      #container>div{
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        padding: 20px;
+        background-color: aqua;
+
+      }
+      
+    </style>
+</head>
+<body>
+    <select  id="Short">
+        <option value="">Short by population</option>
+        <option value="desc">DESC</option>
+        <option value="asc">ASC</option>
+    </select>
+    <div id="container"></div>
+</body>
+</html>
+<script src="./index.js"></script>
